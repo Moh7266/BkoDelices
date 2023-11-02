@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AjoutRestauComponent } from './component/ajout-restau/ajout-restau.component';
+import { LoginComponent } from './component/login/login.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"",redirectTo:"login",pathMatch:"full"},
+  {path:"login",component:LoginComponent},
+  {path:"ajouterRestaurent", component:AjoutRestauComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

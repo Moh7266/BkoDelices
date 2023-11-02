@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bkodelices": {
+      "hosting": {
+        "BkoDelices": [
+          "bkodelices"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bkodelices"
+  }
+}

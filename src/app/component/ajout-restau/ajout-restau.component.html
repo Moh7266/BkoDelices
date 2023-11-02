@@ -1,0 +1,87 @@
+<header>
+  <div class="regle">
+    <!-- logo  -->
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="">
+    </div>
+    <!-- barre de recherche  -->
+    <div class="recherche" >
+        <input type="text" class="searchInp" placeholder="Recherche..." />
+        <button type="submit" class="searchButton">
+          <img src="../../../assets/images/rech.png" alt="">
+        </button>
+    </div>
+    <!-- notification  -->
+    <div class="notification">
+      <img src="../../../assets/images/noti.png" alt="">
+    </div>
+
+    <!-- bouton ajout  -->
+
+    <div class="ajout">
+      <button class="Ajouter">Ajouter +</button>
+    </div>
+  </div>
+</header>
+
+<!-- menu barre droite  -->
+<body>
+  <div class="corps">
+    <div class="groupe">
+      <div class="gauche">
+
+      </div>
+      <div class="centre">
+        <div class="ch">
+rteg
+        </div>
+        <div class="cb">
+          <form #r="ngForm" (ngSubmit)="AddData(r)">
+            <!-- <input type="file" accept="images/*" (change)="onFileSelected($event)" #fileInput> -->
+           <div>
+            <label for="nom">Nom du restaurent</label><br>
+            <input type="text" name="nom" id="nom" ngModel>
+           </div>
+           <div>
+            <label for="adresse">Adresse</label><br>
+            <input type="text" name="adresse" id="adresse" ngModel>
+           </div>
+           <div>
+            <label for="mail">Email</label><br>
+            <input type="email" name="email" id="mail" [(ngModel)]="email">
+           </div>
+           <div>
+            <label for="telephone">telephone</label><br>
+            <input type="tel" name="telephone" id="telephone" ngModel>
+           </div>
+           <div>
+            <label for="pass">Mot de passe</label><br>
+            <input type="password" name="password" id="pass" [(ngModel)]="password">
+           </div>
+           <div>
+            <label for="confirm">confirme</label><br>
+            <input type="password" name="confirm" id="confirm" ngModel>
+           </div>
+           <div>
+            <button type="submit">Ajouter</button>
+            <!-- <input type="submit" value="Ajouter"> -->
+            <input type="reset" value="Annuler">
+           </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="droite">
+
+      </div>
+    </div>
+
+
+  </div>
+  <ul>
+    <li *ngFor=" let data of Restau |async ">
+      {{data.nom}}/{{data.mail}} / {{data.pass}}
+      <button (click)="DeleteData(data.id)">supprimer</button>
+    </li>
+  </ul>
+</body>
