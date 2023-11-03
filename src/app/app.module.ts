@@ -13,6 +13,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore'; // Ass
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { ListeResaturantsComponent } from './component/liste-resaturants/liste-resaturants.component';
+import { AccueilResraurantComponent } from './ForAdlinRestaurants/accueil-resraurant/accueil-resraurant.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ListeResaturantsComponent } from './component/liste-resaturants/liste-r
     AjoutRestauComponent,
     LoginComponent,
     ListeResaturantsComponent,
+    AccueilResraurantComponent,
   ],
   imports: [
     BrowserModule,
