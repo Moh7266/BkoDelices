@@ -12,6 +12,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore'; // Assurez-vous que le chemin est correct
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
+import { ListeResaturantsComponent } from './component/liste-resaturants/liste-resaturants.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { LoginComponent } from './component/login/login.component';
     AppComponent,
     AjoutRestauComponent,
     LoginComponent,
+    ListeResaturantsComponent,
   ],
   imports: [
     BrowserModule,
