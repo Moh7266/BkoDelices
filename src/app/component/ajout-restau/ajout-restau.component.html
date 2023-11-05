@@ -1,161 +1,85 @@
-<header>
-  <div class="regle">
-    <!-- logo  -->
-    <div class="logo">
-      <img src="../../../assets/images/logo.png" alt="">
-    </div>
-    <!-- barre de recherche  -->
-    <div class="recherche" >
-        <input type="text" class="searchInp" placeholder="Recherche..." />
-        <button type="submit" class="searchButton">
-          <img src="../../../assets/images/rech.png" alt="">
-        </button>
-    </div>
-    <!-- notification  -->
-    <div class="notification">
-      <img src="../../../assets/images/noti.png" alt="">
-    </div>
 
-    <!-- bouton ajout  -->
+<!-- titre de la page  -->
+<div class="principal">
 
-    <div class="ajout">
-      <button class="Ajouter">Ajouter +</button>
+  <div class="left">
+    <div class="upbar">
+<!-- Le titre de la page  -->
+      <h1>Formulaire d'ajout de restaurant</h1>
     </div>
+<!-- Les cartes  -->
+
+    <!--  -->
+      <div class="form" *ngIf="user$ |async as user">
+        <form #r="ngForm" (ngSubmit)="AddData(r)">
+          <!-- ====================================== -->
+          <div class="images">
+              <img width="120"
+              height="120" [src]="user.photoUrl ??'assets/images/profil (2).png'"/>
+
+              <button class="pen" (click)="inputField.click()">
+
+              </button>
+          </div>
+          <input #inputField type="file" hidden>
+         <!-- ======================================= -->
+
+          <div>
+           <label for="nom">Nom du restaurent</label><br>
+           <input type="text" name="nom" id="nom" ngModel>
+          </div>
+          <div>
+           <label for="adresse" style="margin-left: -14.1em;">Adresse</label><br>
+           <input type="text" name="adresse" id="adresse" ngModel>
+          </div>
+          <div>
+           <label for="mail" style="margin-left: -15em;">Email</label><br>
+           <input type="email" name="email" id="mail" [(ngModel)]="email">
+          </div>
+          <div>
+           <label for="telephone" style="margin-left: -13.7em;">Téléphone</label><br>
+           <input type="tel" name="telephone" id="telephone" ngModel>
+          </div>
+          <div>
+           <label for="pass" style="margin-left: -12.6em;">Mot de passe</label><br>
+           <input type="password" name="password" id="pass" [(ngModel)]="password">
+          </div>
+          <div>
+           <label for="confirm" style="margin-left: -13.9em;">Confirme</label><br>
+           <input type="password" name="confirm" id="confirm" ngModel>
+          </div>
+          <!-- <div>
+            <label for="telephone" style="margin-left: -15em;">Photo</label><br>
+            <input type="file" accept="images/*" (change)="onFileSelected($event)" #fileInput>
+          </div> -->
+
+          <div class="button">
+           <button type="submit">Ajouter</button>
+           <!-- <input type="submit" value="Ajouter"> -->
+           <button type="reset" style="background-color:red;">Annuler</button>
+          </div>
+         </form>
+      </div>
+    <!--  -->
+
   </div>
-</header>
 
-<!-- menu barre droite  -->
+  <!-- la partie details  -->
+  <div class="right">
+    <div class="detail">
+      <h1>
+      Plus de details
+      </h1>
+    </div>
+
+  </div>
+
+</div>
+
 <body>
-  <div class="corps">
-    <div class="groupe">
-      <div class="gauche">
-        <div class="imgg">
-          <img src="../../../assets/images/profil (2).png" alt="">
-          <h2>Nom et prénom</h2>
-        </div>
-
-        <!-- OPTION 1  -->
-        <div class="option">
-          <div class="p">
-            <div class="contain">
-              <img src="../../../assets/images/acceuil.png" alt="">
-              <p>Accueil</p>
-            </div>
-            <div class="contain">
-              <img src="../../../assets/images/profil (2).png" alt="">
-              <p>SupperAdmin</p>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- OPTION 2  -->
-        <div class="option" style="margin-top: 1.2em;">
-          <div class="p">
-            <div class="contain">
-              <img src="../../../assets/images/profil (2).png" alt="">
-              <p>AdminRestau</p>
-            </div>
-            <div class="contain">
-              <img src="../../../assets/images/plat.png" alt="" style="margin-top: 0.1em;">
-              <p>Plats</p>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- option 3  -->
-        <div class="option" style="margin-top: 1.2em;">
-          <div class="p">
-            <div class="contain">
-              <img src="../../../assets/images/type.png" alt="">
-              <p>Type de plats</p>
-            </div>
-            <div class="contain">
-              <img src="../../../assets/images/evennement.png" alt="">
-              <p>Evennement</p>
-
-            </div>
-          </div>
-        </div>
-        <!-- OPTION 4  -->
-
-        <div class="option" style="margin-top: 1.2em;">
-          <div class="p">
-            <div class="contain">
-              <img src="../../../assets/images/sta.png" alt="">
-              <p>Statistique</p>
-            </div>
-            <div class="contain">
-              <img src="../../../assets/images/reg.png" alt="">
-              <p>reglage</p>
-
-            </div>
-          </div>
-        </div>
-        <!-- OPTION 5  -->
-        <div class="option" style="margin-top: 1.2em;">
-          <div class="p">
-            <div class="contain">
-              <img src="../../../assets/images/tel.png" alt="">
-              <p>Contacts</p>
-            </div>
-            <!-- <div class="contain">
-              <img src="../../../assets/images/profil (2).png" alt="">
-              <p>SupperAdmin</p>
-
-            </div> -->
-          </div>
-        </div>
-
-      </div>
-      <div class="centre">
-        <div class="ch">
-          <h1>Formulaire d'ajout de restaurant</h1>
-        </div>
-        <div class="cb">
-          <form #r="ngForm" (ngSubmit)="AddData(r)">
-           <div>
-            <label for="nom">Nom du restaurent</label><br>
-            <input type="text" name="nom" id="nom" ngModel>
-           </div>
-           <div>
-            <label for="adresse">Adresse</label><br>
-            <input type="text" name="adresse" id="adresse" ngModel>
-           </div>
-           <div>
-            <label for="mail">Email</label><br>
-            <input type="email" name="email" id="mail" [(ngModel)]="email">
-           </div>
-           <div>
-            <label for="telephone">Téléphone</label><br>
-            <input type="tel" name="telephone" id="telephone" ngModel>
-           </div>
-           <div>
-            <label for="pass">Mot de passe</label><br>
-            <input type="password" name="password" id="pass" [(ngModel)]="password">
-           </div>
-           <div>
-            <label for="confirm">Confirme</label><br>
-            <input type="password" name="confirm" id="confirm" ngModel>
-           </div>
-           <input type="file" accept="images/*" (change)="onFileSelected($event)" #fileInput>
-
-           <div class="button">
-            <button type="submit">Ajouter</button>
-            <!-- <input type="submit" value="Ajouter"> -->
-            <button type="reset">Annuler</button>
-           </div>
-          </form>
-        </div>
-      </div>
-      <div class="droite">
-
-      </div>
-    </div>
-
-
-  </div>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
   <ul>
     <li *ngFor=" let data of Restau |async ">
       {{data.nom}}/{{data.mail}} / {{data.pass}}

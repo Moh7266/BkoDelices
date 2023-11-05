@@ -3,6 +3,7 @@ import { Firestore,addDoc, collection, collectionData,deleteDoc, doc } from '@an
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import {AngularFireStorage} from '@angular/fire/compat/storage'
 
 
 @Component({
@@ -23,6 +24,8 @@ export class AjoutRestauComponent {
   }
 
   title = 'BkoDelices';
+  user$=this.authService.currentUser$;
+
 
   constructor(private firestore:Firestore, private authService:AuthService){
     this.GetData();

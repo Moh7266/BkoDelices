@@ -14,7 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { ListeResaturantsComponent } from './component/liste-resaturants/liste-resaturants.component';
 import { AccueilResraurantComponent } from './ForAdlinRestaurants/accueil-resraurant/accueil-resraurant.component';
-
+import {provideStorage,getStorage} from '@angular/fire/storage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AccueilResraurantComponent } from './ForAdlinRestaurants/accueil-resrau
     FormsModule,
     AngularFireModule.initializeApp(environnement.firebase), // Initialisation de AngularFireModule avec la configuration Firebase
     AngularFireAuthModule,
-    provideFirebaseApp(() => initializeApp({"projectId":"bkodelices","appId":"1:160510886328:web:028e8198aefc1a6b61cf4d","storageBucket":"bkodelices.appspot.com","apiKey":"AIzaSyAloSIV9pNStqYWzHjEA9OLYZtFR7PGTqA","authDomain":"bkodelices.firebaseapp.com","messagingSenderId":"160510886328"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()) // Inclusion du module AngularFireAuthModule
+    provideStorage(()=>getStorage()),
+    provideFirebaseApp(() => initializeApp({"projectId":"bkodelices","appId":"1:160510886328:web:028e8198aefc1a6b61cf4d","storageBucket":"bkodelices.appspot.com","apiKey":"AIzaSyAloSIV9pNStqYWzHjEA9OLYZtFR7PGTqA","authDomain":"bkodelices.firebaseapp.com","messagingSenderId":"160510886328"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), BrowserAnimationsModule // Inclusion du module AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
