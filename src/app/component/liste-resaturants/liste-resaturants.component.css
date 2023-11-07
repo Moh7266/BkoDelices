@@ -37,6 +37,10 @@
 }
 .afiche{
   /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
   width: 96%;
   height: 75vh ;
   margin-top: 11vh;
@@ -48,8 +52,10 @@
 }
 .carte{
   /* border: 1px solid black; */
-  width: 25%;
-  height: 32vh;
+
+  width: 75%;
+  /* height: 32vh; */
+  margin-bottom: 1em;
   border-radius: 15px;
   box-shadow: 0px 0px 3px 0px #888888;
   text-align: center;

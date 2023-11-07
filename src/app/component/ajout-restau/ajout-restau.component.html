@@ -10,18 +10,18 @@
 <!-- Les cartes  -->
 
     <!--  -->
-      <div class="form" *ngIf="user$ |async as user">
+      <div class="form">
         <form #r="ngForm" (ngSubmit)="AddData(r)">
           <!-- ====================================== -->
-          <div class="images">
+          <!-- <div class="images" *ngIf="user$ |async as user">
               <img width="120"
               height="120" [src]="user.photoUrl ??'assets/images/profil (2).png'"/>
 
-              <button class="pen" (click)="inputField.click()">
-
+              <button class="pen" (click)="inputField.click()" style="background-color: #fff; border: none;">
+                <img src="../../../assets/images/pen.png" alt="">
               </button>
-          </div>
-          <input #inputField type="file" hidden>
+          </div> -->
+          <input #inputField ="ngModel" name="fileInput" ngModel type="file"  accept="image/*" (change)="onChange($event)">
          <!-- ======================================= -->
 
           <div>
@@ -76,15 +76,15 @@
 
 </div>
 
-<body>
+<div>
   <br><br><br>
   <br><br><br>
   <br><br><br>
   <ul>
     <li *ngFor=" let data of Restau |async ">
-      {{data.nom}}/{{data.mail}} / {{data.pass}}
+      {{data.nom}}/{{data.mail}}
       <button (click)="DeleteData(data.id)">supprimer</button>
     </li>
   </ul>
-</body>
+</div>
 

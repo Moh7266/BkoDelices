@@ -7,14 +7,15 @@
       <h1>Liste des restaurants</h1>
     </div>
 <!-- Les cartes  -->
-    <div class="afiche">
+    <div class="afiche" >
     <!--  -->
-      <div class="carte">
+      <div class="carte" *ngFor=" let data of Restau ">
         <div class="image">
-          <img src="../../../assets/images/restau.png" alt="">
+          <!-- recuperer l'image dans firestorage et le mettre ici -->
+          <img [src]="data.fileInput" alt="image du restaurant">
         </div>
         <div class="titre">
-          <h3>Le goût de çà</h3>
+          <h3>{{data.nom}}</h3>
         </div>
       </div>
     <!--  -->

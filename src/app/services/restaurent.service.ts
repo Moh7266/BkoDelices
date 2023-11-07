@@ -34,9 +34,11 @@ export class RestaurentService {
       pass: restaurent.pass
     });
   }
-  
+
   deleteRestaurent(id: string) {
     this.getRestaurent(id).remove();
   }
 
+
+  
 }

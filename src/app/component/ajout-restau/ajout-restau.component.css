@@ -96,3 +96,8 @@
   object-fit: cover;
   object-position: center;
 }
+.pen img{
+  width: 3em;
+  margin-left: -2em;
+  border: none;
+}
