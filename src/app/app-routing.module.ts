@@ -6,6 +6,7 @@ import { ListeResaturantsComponent } from './component/liste-resaturants/liste-r
 import { AjoutSuperAdminComponent } from './SuperAdmin/ajout-super-admin/ajout-super-admin.component';
 import { ListAdminComponent } from './SuperAdmin/list-admin/list-admin.component';
 import { HeaderComponent } from './parties/header/header.component';
+import { HeaderUserComponent } from './parties/header-user/header-user.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"ajouterRestaurent", component:AjoutRestauComponent},
   {path:"restaurants", component: ListeResaturantsComponent},
   {path:"ajoutSuper", component: AjoutSuperAdminComponent},
-  {path: "listAdmin", component: ListAdminComponent}
+  {path: "listAdmin", component: ListAdminComponent},
+  { path:"headerU", component:HeaderUserComponent}
 ];
 
 @NgModule({

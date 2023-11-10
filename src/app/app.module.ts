@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AjoutSuperAdminComponent } from './SuperAdmin/ajout-super-admin/ajout-super-admin.component';
 import { ListAdminComponent } from './SuperAdmin/list-admin/list-admin.component';
 import { HeaderComponent } from './parties/header/header.component';
+import { HeaderUserComponent } from './parties/header-user/header-user.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HeaderComponent } from './parties/header/header.component';
     AjoutSuperAdminComponent,
     ListAdminComponent,
     HeaderComponent,
+    HeaderUserComponent,
   ],
   imports: [
     BrowserModule,
