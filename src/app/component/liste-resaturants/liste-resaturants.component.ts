@@ -42,4 +42,8 @@ export class ListeResaturantsComponent {
 
     // =collectionData(collectionInstance, {idField:'id'});
   }
+
+  showRestauDetails(Restau: any) {
+    this.Restau = Restau; // Met à jour les détails de l'administrateur sélectionné
+  }
 }

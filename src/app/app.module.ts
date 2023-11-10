@@ -13,9 +13,11 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore'; // Ass
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { ListeResaturantsComponent } from './component/liste-resaturants/liste-resaturants.component';
-import { AccueilResraurantComponent } from './ForAdlinRestaurants/accueil-resraurant/accueil-resraurant.component';
 import {provideStorage,getStorage} from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AjoutSuperAdminComponent } from './SuperAdmin/ajout-super-admin/ajout-super-admin.component';
+import { ListAdminComponent } from './SuperAdmin/list-admin/list-admin.component';
+import { HeaderComponent } from './parties/header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AjoutRestauComponent,
     LoginComponent,
     ListeResaturantsComponent,
-    AccueilResraurantComponent,
+    AjoutSuperAdminComponent,
+    ListAdminComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

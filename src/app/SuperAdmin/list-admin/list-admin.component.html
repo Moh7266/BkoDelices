@@ -2,7 +2,6 @@
 
 <!-- titre de la page  -->
 <div class="principal">
-
   <div class="menu" style="z-index: 6;">
     <div class="profil">
       <img src="../../../assets/images/profil (2).png" alt="">
@@ -71,15 +70,15 @@
   <div class="centre">
     <div class="upbar">
 <!-- Le titre de la page  -->
-      <h1>Liste des restaurants</h1>
+      <h1>Liste des Admins</h1>
     </div>
 <!-- Les cartes  -->
     <div class="afiche" >
     <!--  -->
-      <div class="carte" *ngFor=" let data of Restau " (click)="showRestauDetails(data)">
+      <div class="carte" *ngFor=" let data of SupAdmin ">
         <div class="image">
           <!-- recuperer l'image dans firestorage et le mettre ici -->
-          <img [src]="data.fileInput" alt="image du restaurant">
+          <img [src]="data.fileInput" alt="profil">
         </div>
         <div class="titre">
           <h3>{{data.nom}}</h3>
@@ -97,9 +96,9 @@
       Plus de details
       </h1>
       <hr><hr><hr>
-      <div class="detailA" *ngIf="Restau">
-        <h1>{{Restau.nom}}</h1>
-      </div>
+    </div>
+    <div>
+
     </div>
 
   </div>
